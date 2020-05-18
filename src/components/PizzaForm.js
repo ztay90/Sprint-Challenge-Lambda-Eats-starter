@@ -64,6 +64,7 @@ export default function PizzaForm() {
       .post("https://reqres.in/api/users", pizzaState)
       .then(response => {
         setPost([...post, response.data])
+        console.log(pizzaState)
       }).catch(err => console.log(err))
   }
   return (
@@ -93,12 +94,12 @@ export default function PizzaForm() {
         <p>Required</p>
         </div>
         <div className="selectoption">
-          <select name="SizeChoice" id="SizeChoice">
+          <select name="size" id="size" value={pizzaState.size} onChange={inputChange} >
             <option>Select:</option>
-            <option value={pizzaState.size} onChange={inputChange} name="small">Small</option>
-            <option value={pizzaState.size} onChange={inputChange} name="medium">Medium</option>
-            <option value={pizzaState.size} onChange={inputChange} name="large">Large</option>
-            <option value={pizzaState.size} onChange={inputChange} name="extra large">Extra Large</option>
+            <option name="small">Small</option>
+            <option name="medium">Medium</option>
+            <option name="large">Large</option>
+            <option name="extra large">Extra Large</option>
         </select>
         </div>
         <div className="Selection-Header">
@@ -106,53 +107,53 @@ export default function PizzaForm() {
           <p>Required</p>
         </div>
         <div className="ChoiceSauce"> 
-          <label htmlFor="OriginalRed">
+          <label htmlFor="sauce">
             <input 
               type="radio" 
-              name="OriginalRed" 
-              id="OriginalRed"
-              checked = "checked" 
+              name="sauce" 
+              id="sauce"
+              // checked = "checked" 
               value={pizzaState.sauce}
               onChange={inputChange} 
             />
             Original Red
           </label>
-          <label htmlFor="GarlicRanch">
+          <label htmlFor="sauce">
             <input 
               type="radio" 
-              name="GarlicRanch" 
-              id="GarlicRanch"
+              name="sauce" 
+              id="sauce"
               value={pizzaState.sauce}
               onChange={inputChange} 
             />
             Garlic Ranch
           </label>
-          <label htmlFor="BBQSauce">
+          <label htmlFor="sauce">
             <input 
               type="radio" 
-              name="BBQSauce" 
-              id="BBQSauce"
+              name="sauce" 
+              id="sauce"
               value={pizzaState.sauce}
               onChange={inputChange} 
             />
             BBQ Sauce
           </label>
-          <label htmlFor="SpinachAlfredo">
+          <label htmlFor="sauce">
             <input 
               type="radio" 
-              name="SpinachAlfredo" 
-              id="SpinachAlfredo"
+              name="sauce" 
+              id="sauce"
               value={pizzaState.sauce}
               onChange={inputChange} 
             />
             Spinach Alfredo
           </label>
         </div>
-        <div className="Selection-Header">
+        {/* <div className="Selection-Header">
         <label htmlFor="ToppingsChoice">Add Toppings</label>
         <p>Choose up to 4</p>
-        </div>
-        <div className="ChoiceSauce">
+        </div> */}
+        {/* <div className="ChoiceSauce">
           <label htmlFor="Pepperoni">
             <input 
               type ="checkbox" 
@@ -189,10 +190,9 @@ export default function PizzaForm() {
             />
             Grilled Chicken
           </label>
-        </div>
+        </div> */}
         <div className="Selection-Header">
         <label htmlFor="SpecialInstructions">Special Instructions</label>
-        <p>Choose up to 4</p>
         </div>
         <div className="selectoption">
           <input 
