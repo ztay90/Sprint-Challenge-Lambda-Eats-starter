@@ -4,7 +4,7 @@ import Pizza from './Assets/Pizza.jpg';
 import axios from "axios";
 
 const formSchema = yup.object().shape({
-  name: yup.string().min(2, "Name must be atleast 2 chracters long."),
+  name: yup.string().min(2, "* Name must be atleast 2 chracters long."),
   size: yup.string(),
   sauce: yup.string(),
   instructions: yup.string()
