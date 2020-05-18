@@ -12,7 +12,7 @@ const App = () => {
           <h1>Lambda Eats</h1>
           <div className="nav-links">
             <Link to="/">Home</Link>
-            <Link to="/orderform">Order</Link>
+            <Link to="/orderform">Pizza?</Link>
           </div>
         </nav>
         <Route path="/" component={HomePage} />
