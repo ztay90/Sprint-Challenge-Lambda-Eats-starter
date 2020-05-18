@@ -53,7 +53,7 @@ export default function PizzaForm() {
     e.persist();
     validate(e);
     let value = 
-      e.target.type === "checkbox" ? e.target.checked : e.target.value;
+      e.target.type === "radio" ? e.target.id : e.target.value;
     setPizzaState({...pizzaState, [e.target.name]: value});
   }
 
@@ -73,21 +73,23 @@ export default function PizzaForm() {
       <img src={Pizza} alt="Pizza Image" />
       <div className="form-info">
         <div className="NameForOrder">
-          <label htmlFor="name">Name For Order:
+          <label htmlFor="name"> 
+          Name For Order:
+          <div>
             <input 
-              className="ordername"
-              id="name"
-              type="text"
-              name="name"
-              placeholder="Enter Your Name"
-              value={pizzaState.name}
-              onChange={inputChange} 
-            />
-            {errorState.name.length > 0 ? (
-            <p className="error">{errorState.name}</p>
-            ) : null}
+                className="ordername"
+                id="name"
+                type="text"
+                name="name"
+                placeholder="Enter Your Name"
+                value={pizzaState.name}
+                onChange={inputChange} 
+              />
+          </div>  
+          {errorState.name.length > 0 ? (
+          <p className="error">{errorState.name}</p>
+          ) : null}
           </label>
-          
         </div>
         <div className="Selection-Header">
         <label htmlFor="SizeChoice">Choice of Size</label>
@@ -111,7 +113,7 @@ export default function PizzaForm() {
             <input 
               type="radio" 
               name="sauce" 
-              id="sauce"
+              id="Original Red"
               // checked = "checked" 
               value={pizzaState.sauce}
               onChange={inputChange} 
@@ -122,7 +124,7 @@ export default function PizzaForm() {
             <input 
               type="radio" 
               name="sauce" 
-              id="sauce"
+              id="Garlic Ranch"
               value={pizzaState.sauce}
               onChange={inputChange} 
             />
@@ -132,7 +134,7 @@ export default function PizzaForm() {
             <input 
               type="radio" 
               name="sauce" 
-              id="sauce"
+              id="BBQ Sauce"
               value={pizzaState.sauce}
               onChange={inputChange} 
             />
@@ -142,7 +144,7 @@ export default function PizzaForm() {
             <input 
               type="radio" 
               name="sauce" 
-              id="sauce"
+              id="Spinach Alfredo"
               value={pizzaState.sauce}
               onChange={inputChange} 
             />
