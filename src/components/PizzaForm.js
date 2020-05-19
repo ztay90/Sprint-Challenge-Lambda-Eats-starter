@@ -74,7 +74,7 @@ export default function PizzaForm() {
       <div className="form-info">
         <div className="NameForOrder">
           <label htmlFor="name"> 
-          Name For Order:
+          Name for Order:
           <div>
             <input 
                 className="ordername"
@@ -151,11 +151,11 @@ export default function PizzaForm() {
             Spinach Alfredo
           </label>
         </div>
-        {/* <div className="Selection-Header">
+        <div className="Selection-Header">
         <label htmlFor="ToppingsChoice">Add Toppings</label>
         <p>Choose up to 4</p>
-        </div> */}
-        {/* <div className="ChoiceSauce">
+        </div>
+        <div className="ChoiceSauce">
           <label htmlFor="Pepperoni">
             <input 
               type ="checkbox" 
@@ -192,7 +192,7 @@ export default function PizzaForm() {
             />
             Grilled Chicken
           </label>
-        </div> */}
+        </div>
         <div className="Selection-Header">
         <label htmlFor="SpecialInstructions">Special Instructions</label>
         </div>
@@ -207,7 +207,7 @@ export default function PizzaForm() {
             onChange={inputChange} 
           />
         </div>
-        <button disabled={isbuttonDisabled}>Add to Order</button>
+        <button type="submit" disabled={isbuttonDisabled}>Add to Order</button>
       </div>
     </form>
   )

@@ -22,7 +22,7 @@ Form validation makes it so users have to fill out certain parts of a form and c
 
 3. In 1-2 sentences, define end to end testing.
 
-- A way of automatically testing some actions that a user performs and verifies that they work.
+A way of automatically testing some actions that a user performs and verifies that they work.
 
 
 You are expected to be able to answer all these questions. Your responses contribute to your Sprint Challenge grade. Skipping this section **will** prevent you from passing this challenge.
